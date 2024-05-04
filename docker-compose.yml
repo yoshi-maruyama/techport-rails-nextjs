@@ -1,0 +1,30 @@
+version: "3.8.1"
+
+services:
+  db:
+    image: mysql:8.1.0
+    environment:
+      - MYSQL_DATABASE=techport
+      - MYSQL_ROOT_PASSWORD=password
+    volumes:
+      - mysql-db:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+  backend:
+    tty: true
+    stdin_open: true
+    depends_on:
+      - db
+    build:
+      context: ./backend/
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./backend:/app
+    command: rails server -b 0.0.0.0
+
+volumes:
+  mysql-db:
+    driver: local
