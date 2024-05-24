@@ -1,0 +1,104 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - "bin/**/*"
+    - "db/schema.rb"
+    - "db/fixtures/test/**/*"
+    - "vendor/**/*"
+    - "tmp/**/*"
+    - "config/environments/**/*"
+  TargetRubyVersion: 3.2
+
+Layout/LineLength:
+  Max: 100
+  AllowedPatterns:
+    - "^ *?#"
+  AutoCorrect: false
+
+Layout/MultilineMethodCallIndentation:
+  Exclude:
+    - "spec/**/*"
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/BlockDelimiters:
+  AllowedMethods:
+    - lambda
+    - proc
+
+Rails/EnvironmentVariableAccess:
+  Enabled: false
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/EndlessMethod:
+  Enabled: true
+  EnforcedStyle: allow_single_line
+
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
+    - "config/initializers/*"
+    - "config/routes/*"
+  CountAsOne:
+    - "array"
+    - "hash"
+    - "heredoc"
+  AllowedMethods:
+    - "included"
+
+Metrics/MethodLength:
+  Exclude:
+    - "db/migrate/*"
+  CountAsOne:
+    - "array"
+    - "hash"
+    - "heredoc"
+
+Metrics/ClassLength:
+  Max: 200
+  CountAsOne:
+    - "array"
+    - "hash"
+    - "heredoc"
+
+Metrics/ModuleLength:
+  CountAsOne:
+    - "array"
+    - "hash"
+    - "heredoc"
+
+Metrics/AbcSize:
+  Exclude:
+    - "db/migrate/*"
+
+Rails/BulkChangeTable:
+  Enabled: false
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Layout/FirstHashElementIndentation:
+  Enabled: false
