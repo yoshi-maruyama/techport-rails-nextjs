@@ -1,0 +1,7 @@
+<% flash_mapper = {success: "alert-success", error: "alert-danger" }%>
+
+<% flash.each do |type, message| %>
+  <div class="alert <%= flash_mapper.fetch(type.to_sym, "alert-primary") %>" role="alert">
+    <%= message %>
+  </div>
+<% end %>
