@@ -1,0 +1,39 @@
+@use "/src/app/variables.scss" as *;
+
+.header {
+  height: 30rem;
+  background-color: $color-main;
+  position: relative;
+  .container {
+    padding-left: 32rem;
+    color: $color-white;
+    .userName {
+      padding-top: 6rem;
+      font-size: 10rem;
+      line-height: 9rem;
+    }
+    .email {
+      display: flex;
+      font-size: $fontsize-md;
+      margin-left: 1rem;
+      align-items: center;
+      .icon {
+        margin-right: $space-md;
+        width: 2.5rem;
+      }
+    }
+    .navBar {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      padding: 1rem;
+      .navItem {
+        font-size: $fontsize-md;
+        margin-right: 5rem;
+      }
+      .active {
+        border-bottom: 5px solid;
+      }
+    }
+  }
+}
