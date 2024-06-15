@@ -1,7 +1,8 @@
 import styles from "@/components/header/header.module.scss";
 import MailIcon from "../icons/mail";
+import { HeaderProps } from "@/components/header/type";
 
-export default function Header(props: any) {
+export default function Header(props: HeaderProps) {
   const { user } = props;
   return (
     <header className={styles.header}>
