@@ -1,0 +1,7 @@
+<main class="container">
+  <div class="mt-5">
+    <h1 class="mb-3">Edit Career</h1>
+  </div>
+  <%= render partial: "career_form" , locals: { career: career } %>
+  <%= button_to "Delete", career_path(career), class: "btn btn-danger w-25 mt-5", method: :delete %>
+</main>

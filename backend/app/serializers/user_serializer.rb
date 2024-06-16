@@ -1,6 +1,6 @@
 class UserSerializer < ApplicationSerializer
-  attributes :name
-  attributes :email
-  attributes :postal_code
-  attributes :address
+  attribute :name
+  attribute :email
+  attribute :postal_code
+  attribute :address
 end

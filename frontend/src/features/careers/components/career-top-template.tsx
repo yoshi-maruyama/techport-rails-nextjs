@@ -3,11 +3,11 @@ import CareerList from "@/features/careers/components/career-list";
 import { CareerTopTemplateProps } from "@/features/careers/types";
 
 export default function CareerTopTemplate(props: CareerTopTemplateProps) {
-  const { user } = props;
+  const { user, careers } = props;
   return (
     <div>
       <Header user={user} />
-      <CareerList />
+      <CareerList careers={careers} />
     </div>
   );
 }

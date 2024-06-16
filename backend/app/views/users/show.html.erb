@@ -2,37 +2,25 @@
   <main>
     <div class="row g-5 py-5">
       <div class="col-md-7 col-lg-8">
-        <h4 class="mb-3">Intoduction</h4>
+        <h4 class="mb-3">Introduction</h4>
         <%= form_with model: user, url: user_path, data: {turbo: false} do |f| %>
           <div class="row g-3">
             <div class="col-12">
               <%= f.label :name, "Name", class: "form-label" %>
               <%= f.text_field :name, class: "form-control" %>
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
             </div>
-
             <div class="col-12">
               <%= f.label :email, "Email", class: "form-label" %>
               <%= f.email_field :email, class: "form-control", placeholder: "you@example.com" %>
-              <div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
-              </div>
             </div>
             <div class="col-sm-6">
               <%= f.label :postal_code, "Postal Code", class: "form-label" %>
               <%= f.text_field :postal_code, class: "form-control" %>
             </div>
-
             <div class="col-12">
               <%= f.label :address, "Address", class: "form-label" %>
               <%= f.text_field :address, class: "form-control", placeholder: "1234 Main St" %>
-              <div class="invalid-feedback">
-                Please enter your shipping address.
-              </div>
             </div>
-
           <hr class="my-4">
 
           <%= f.submit "Submit", class: "w-100 btn btn-primary btn-lg" %>

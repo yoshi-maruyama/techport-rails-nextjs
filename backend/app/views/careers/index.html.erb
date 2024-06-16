@@ -1,0 +1,12 @@
+<main class="container">
+  <div class="row g-5 py-5">
+    <div class="col-md-12 col-lg-12">
+      <h4 class="mb-3">Careers</h4>
+    <div class="d-flex justify-content-end">
+      <%= link_to "new career", new_career_path, class: "btn btn-primary w-25" %>
+    </div>
+  </div>
+  <% careers.each do |career| %>
+    <%= render partial: "career_card", locals: { career: career }%>
+  <% end %>
+</main>
