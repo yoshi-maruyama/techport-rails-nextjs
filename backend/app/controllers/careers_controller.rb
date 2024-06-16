@@ -11,7 +11,7 @@ class CareersController < ApplicationController
       flash[:success] = "Record successfully created"
       redirect_to careers_path
     else
-      flash[:error] = "Failed to create Record"
+      flash.now[:error] = "Failed to create Record"
       render :new
     end
   end
@@ -28,8 +28,18 @@ class CareersController < ApplicationController
       flash[:success] = "Record successfully updated"
       redirect_to careers_path
     else
-      flash[:error] = "Failed to update Record"
+      flash.now[:error] = "Failed to update Record"
       render :edit
+    end
+  end
+
+  def destroy
+    if career.destroy
+      flash[:success] = "Record successfully deleted"
+      redirect_to careers_path
+    else
+      flash[:error] = "Failed to delete Record"
+      redirect_to edit_career_path(career)
     end
   end
 
