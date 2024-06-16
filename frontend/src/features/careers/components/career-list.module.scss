@@ -5,41 +5,4 @@
   padding-top: 4rem;
   width: 90rem;
   border-bottom: solid 1px $color-main;
-  .item {
-    border-top: solid 1px $color-main;
-    display: flex;
-    margin-bottom: 5rem;
-    .icon {
-      position: relative;
-      left: -2rem;
-      content: "";
-      width: 7.5rem;
-      height: 5rem;
-      background-color: $color-main;
-      border-radius: 50%;
-      margin-top: 10px;
-    }
-    .icon::after {
-      content: "";
-      display: block;
-      width: 1px;
-      height: 100%;
-      background-color: $color-main;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 60px;
-      margin: auto;
-    }
-    .content {
-      .title {
-        font-size: $fontsize-lg;
-        align-items: center;
-        margin-top: $space-md;
-      }
-      .description {
-        font-size: $fontsize-sm;
-      }
-    }
-  }
 }
