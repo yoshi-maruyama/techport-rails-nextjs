@@ -7,4 +7,15 @@ class CareersController < ApplicationController
 
   def show
   end
+
+  private
+
+  def user
+    @user ||= User.first
+  end
+
+  def careers
+    @careers ||= user.careers
+  end
+  helper_method :careers
 end
