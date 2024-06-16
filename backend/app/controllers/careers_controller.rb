@@ -19,6 +19,9 @@ class CareersController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
   private
 
   def user
