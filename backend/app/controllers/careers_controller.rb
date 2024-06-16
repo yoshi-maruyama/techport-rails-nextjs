@@ -20,7 +20,7 @@ class CareersController < ApplicationController
   helper_method :careers
 
   def career
-    @career ||= careers.find_by(params[:id])
+    @career ||= careers.find_by(id: params[:id]) || careers.build
   end
   helper_method :career
 end
