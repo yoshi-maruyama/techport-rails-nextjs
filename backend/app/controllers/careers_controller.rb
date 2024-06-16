@@ -18,4 +18,9 @@ class CareersController < ApplicationController
     @careers ||= user.careers
   end
   helper_method :careers
+
+  def career
+    @career ||= careers.find_by(params[:id])
+  end
+  helper_method :career
 end
