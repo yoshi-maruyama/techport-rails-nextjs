@@ -22,6 +22,17 @@ class CareersController < ApplicationController
   def edit
   end
 
+  def update
+    career.assign_attributes(career_params)
+    if career.save
+      flash[:success] = "Record successfully updated"
+      redirect_to careers_path
+    else
+      flash[:error] = "Failed to update Record"
+      render :edit
+    end
+  end
+
   private
 
   def user
