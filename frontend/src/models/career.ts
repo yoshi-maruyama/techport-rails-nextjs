@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+
 export default class Career {
   constructor(
     private _id: string,
@@ -20,10 +22,18 @@ export default class Career {
   }
 
   get startedAt() {
-    return this._startedAt;
+    return this.formatDate(this._startedAt);
   }
 
   get endedAt() {
-    return this._endedAt;
+    return this.formatDate(this._endedAt);
+  }
+
+  private formatDate(date?: string) {
+    if (date) {
+      return dayjs(date).format("YY/MM");
+    } else {
+      return "Now";
+    }
   }
 }
