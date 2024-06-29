@@ -20,7 +20,8 @@ class CareerRepository {
       data.title,
       data.description,
       data.startedAt,
-      data.endedAt
+      data.endedAt,
+      data.notionKey
     );
   }
 }
