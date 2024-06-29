@@ -6,7 +6,8 @@ export default class Career {
     private _title: string,
     private _description: string,
     private _startedAt: string,
-    private _endedAt?: string
+    private _endedAt?: string,
+    private _notionKey?: string
   ) {}
 
   get id() {
@@ -27,6 +28,10 @@ export default class Career {
 
   get endedAt() {
     return this.formatDate(this._endedAt);
+  }
+
+  get notionKey() {
+    return this._notionKey;
   }
 
   private formatDate(date?: string) {

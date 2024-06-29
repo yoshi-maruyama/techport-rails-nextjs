@@ -1,4 +1,4 @@
-<%= form_with model: career, class: "row g-3", data: {turbo: false} do |f| %>
+<%= form_with model: career_notion, class: "row g-3", data: {turbo: false} do |f| %>
   <div class="col-md-6">
     <%= f.label :title, "Title", class: "form-label" %>
     <%= f.text_field :title, class: "form-control" %>
@@ -10,6 +10,10 @@
   <div class="col-md-3">
     <%= f.label :ended_at, "Ended at", class: "form-label" %>
     <%= f.date_field :ended_at, class: "form-control" %>
+  </div>
+  <div class="col-md-3">
+    <%= f.label :notion_key, "Notion key", class: "form-label" %>
+    <%= f.text_field :notion_key, class: "form-control" %>
   </div>
   <div class="col-12">
     <%= f.label :description, "Description", class: "form-label" %>

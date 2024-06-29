@@ -6,8 +6,8 @@ class CareersController < ApplicationController
   end
 
   def create
-    career.assign_attributes(career_params)
-    if career.save
+    career_notion.assign_attributes(career_params)
+    if career_notion.save
       flash[:success] = "Record successfully created"
       redirect_to careers_path
     else
@@ -23,8 +23,8 @@ class CareersController < ApplicationController
   end
 
   def update
-    career.assign_attributes(career_params)
-    if career.save
+    career_notion.assign_attributes(career_params)
+    if career_notion.save
       flash[:success] = "Record successfully updated"
       redirect_to careers_path
     else
@@ -59,7 +59,12 @@ class CareersController < ApplicationController
   end
   helper_method :career
 
+  def career_notion
+    @career_notion ||= CareerNotionForm.new(career:)
+  end
+  helper_method :career_notion
+
   def career_params
-    params.require(:career).permit(:title, :started_at, :ended_at, :description)
+    params.require(:career).permit(:title, :started_at, :ended_at, :description, :notion_key)
   end
 end
