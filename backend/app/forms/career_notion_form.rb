@@ -51,7 +51,7 @@ class CareerNotionForm
       started_at: career.started_at,
       ended_at: career.ended_at,
       description: career.description,
-      notion_key: career.notion&.key
+      notion_key: career.notion_key
     }
   end
 end
