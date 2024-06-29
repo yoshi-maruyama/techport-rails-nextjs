@@ -44,4 +44,10 @@
       font-size: $fontsize-sm;
     }
   }
+  .content:hover {
+    .title {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+    }
+  }
 }
