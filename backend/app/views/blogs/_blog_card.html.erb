@@ -1,0 +1,10 @@
+<div class="col">
+  <div class="card">
+    <%= image_tag "rails.png", class: "card-img-top" %>
+    <div class="card-body">
+      <h5 class="card-title"><%= blog.title %></h5>
+      <p class="card-text"><%= blog.summary %></p>
+      <%= link_to "edit", edit_blog_path(blog), class: "btn btn-secondary" %>
+    </div>
+  </div>
+</div>
