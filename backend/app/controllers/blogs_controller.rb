@@ -6,8 +6,8 @@ class BlogsController < ApplicationController
   end
 
   def create
-    blog.assign_attributes(blog_params)
-    if blog.save
+    blog_notion_form.assign_attributes(blog_params)
+    if blog_notion_form.save
       flash[:success] = "Record successfully created"
       redirect_to blogs_path
     else
@@ -32,7 +32,12 @@ class BlogsController < ApplicationController
   end
   helper_method :blog
 
+  def blog_notion_form
+    @blog_notion_form ||= BlogNotionForm.new(blog:)
+  end
+  helper_method :blog_notion_form
+
   def blog_params
-    params.require(:blog).permit(:title, :summary)
+    params.require(:blog).permit(:title, :summary, :notion_key)
   end
 end
