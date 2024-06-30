@@ -1,7 +1,7 @@
 import styles from "@/components/header/header.module.scss";
 import MailIcon from "../icons/mail";
 import { HeaderProps } from "@/components/header/type";
-import Link from "next/link";
+import Navbar from "../navbars/navbar";
 
 export default function Header(props: HeaderProps) {
   const { user } = props;
@@ -17,15 +17,7 @@ export default function Header(props: HeaderProps) {
             <div>{user.email}</div>
           </div>
         </div>
-        <ul className={styles.navBar}>
-          <Link href="/">
-            <li className={`${styles.navItem} ${styles.active}`}>career</li>
-          </Link>
-          <li className={styles.navItem}>portfolios</li>
-          <Link href="/blogs">
-            <li className={styles.navItem}>blogs</li>
-          </Link>
-        </ul>
+        <Navbar />
       </div>
     </header>
   );
