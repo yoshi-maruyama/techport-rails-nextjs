@@ -7,7 +7,7 @@ export default function CareerList(props: CareerListProps) {
   return (
     <div className={styles.container}>
       {careers.map((career) => {
-        return <CareerItem career={career} />;
+        return <CareerItem career={career} key={career.notionKey} />;
       })}
     </div>
   );

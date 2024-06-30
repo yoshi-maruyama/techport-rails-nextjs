@@ -1,0 +1,15 @@
+@use "/src/app/variables.scss" as *;
+
+.navBar {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+  .navItem {
+    font-size: $fontsize-md;
+    margin-right: 5rem;
+  }
+  .active {
+    border-bottom: 5px solid;
+  }
+}

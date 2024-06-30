@@ -1,0 +1,31 @@
+@use "/src/app/variables.scss" as *;
+
+.col3 {
+  grid-column: span 3;
+}
+.card {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  height: auto;
+  .imgframe {
+    width: 100%;
+    height: auto;
+    padding-top: 56.25%;
+    background: url(https://placehold.jp/640x360.png) no-repeat center;
+    background-size: cover;
+    box-sizing: border-box;
+  }
+  .textbox {
+    width: 100%;
+    height: auto;
+    padding: 20px 18px;
+    background: $color-white;
+    box-sizing: border-box;
+    .title {
+      font-size: $fontsize-md;
+      font-weight: bold;
+    }
+    .summary {
+      font-size: 12px;
+    }
+  }
+}
