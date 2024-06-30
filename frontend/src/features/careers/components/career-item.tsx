@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function CareerItem(props: CareerItemProps) {
   const { career } = props;
   return (
-    <div className={styles.item} key={career.id}>
+    <div className={styles.item}>
       <div className={styles.icon}></div>
       <Link href={`/contents/${career.notionKey}`}>
         <div className={styles.content}>
