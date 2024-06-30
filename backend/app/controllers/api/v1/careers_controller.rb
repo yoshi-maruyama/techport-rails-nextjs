@@ -10,6 +10,6 @@ class Api::V1::CareersController < ApiController
   end
 
   def careers
-    @careers ||= user.careers.order(started_at: :asc)
+    @careers ||= user.careers.includes(:notion).order(started_at: :asc)
   end
 end
