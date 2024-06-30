@@ -16,6 +16,9 @@ class BlogsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   private
 
   def user
@@ -28,7 +31,7 @@ class BlogsController < ApplicationController
   helper_method :blogs
 
   def blog
-    @blog ||= blogs.build
+    @blog ||= blogs.find(params[:id]) || blogs.build
   end
   helper_method :blog
 
