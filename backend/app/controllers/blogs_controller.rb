@@ -19,6 +19,17 @@ class BlogsController < ApplicationController
   def edit
   end
 
+  def update
+    blog_notion_form.assign_attributes(blog_params)
+    if blog_notion_form.save
+      flash[:success] = "Record successfully updated"
+      redirect_to blogs_path
+    else
+      flash.now[:error] = "Failed to update Record"
+      render :edit
+    end
+  end
+
   private
 
   def user
@@ -31,7 +42,7 @@ class BlogsController < ApplicationController
   helper_method :blogs
 
   def blog
-    @blog ||= blogs.find(params[:id]) || blogs.build
+    @blog ||= blogs.find_by(id: params[:id]) || blogs.build
   end
   helper_method :blog
 
