@@ -30,6 +30,16 @@ class BlogsController < ApplicationController
     end
   end
 
+  def destroy
+    if blog.destroy
+      flash[:success] = "Record successfully deleted"
+      redirect_to blogs_path
+    else
+      flash[:error] = "Failed to delete Record"
+      redirect_to edit_blog_path(blog)
+    end
+  end
+
   private
 
   def user
