@@ -1,4 +1,5 @@
 class Career < ApplicationRecord
+  belongs_to :user
   has_one :notion, as: :notionable, dependent: :destroy
 
   validates :title, presence: true
