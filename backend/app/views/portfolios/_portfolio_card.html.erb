@@ -1,0 +1,17 @@
+<div class="col">
+  <div class="card">
+    <%= image_tag "rails.png", class: "card-img-top" %>
+    <div class="card-body">
+      <%= link_to portfolio_path(portfolio), class: "link-opacity-100-hover" do %>
+      <h5 class="card-title"><%= portfolio.title %></h5>
+      <% end %>
+      <p class="card-text"><%= portfolio.summary %></p>
+      <p class="card-text">
+        <%= link_to portfolio.url, class: "link-opacity-100-hover" do %>
+          <%= portfolio.url %>
+        <% end %>
+      </p>
+      <%= link_to "edit", edit_portfolio_path(portfolio), class: "btn btn-secondary" %>
+    </div>
+  </div>
+</div>
