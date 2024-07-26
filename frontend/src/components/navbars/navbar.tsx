@@ -15,7 +15,7 @@ export default function Navbar() {
     {
       name: "portfolios",
       href: "/portfolios",
-      isActive: pathname.includes("/porfolios"),
+      isActive: pathname.includes("/portfolios"),
     },
     {
       name: "blogs",

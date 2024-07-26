@@ -10,4 +10,6 @@ COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
 RUN bundle install
 
-CMD ["rails", "server", "-b", "0.0.0.0", "-e", "production"]
+RUN chmod +x /app/entrypoint.sh
+
+ENTRYPOINT ["/app/entrypoint.sh"]

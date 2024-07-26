@@ -3,5 +3,6 @@ namespace :api do
     resource :user, only: %i[show]
     resources :careers, only: %i[index]
     resources :blogs, only: %i[index]
+    resources :portfolios, only: %i[index]
   end
 end

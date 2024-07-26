@@ -1,0 +1,5 @@
+<main class="container pt-5">
+  <h4 class="mb-3">Edit Portfolio</h4>
+  <%= render partial: "portfolio_form" , locals: { portfolio_notion_form: portfolio_notion_form } %>
+  <%= button_to "Delete", portfolio_path(portfolio), class: "btn btn-danger w-25 mt-5", method: :delete %>
+</main>

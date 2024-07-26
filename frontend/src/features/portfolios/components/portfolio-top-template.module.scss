@@ -1,0 +1,8 @@
+@use "/src/app/variables.scss" as *;
+
+.container {
+  padding: $space-lg;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 5rem;
+}

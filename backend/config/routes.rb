@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resource :user, only: %i[show update create]
   resources :careers
   resources :blogs
+  resources :portfolios
 end
